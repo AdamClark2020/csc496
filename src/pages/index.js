@@ -9,7 +9,7 @@ import Seo from '../components/seo'
 const IndexPage = () => {
   return (
     <Layout pageTitle='Home Page'>
-      <p>I'm making this by following the Gatsby Tutorial.</p>
+      <p>Welcome to adam clarks gatsby site.</p>
       <MyImage>Text in image</MyImage>
     </Layout>
   )
