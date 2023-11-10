@@ -9,12 +9,12 @@ const Container = styled.div`
   justify-content: center; /* Centering the elements horizontally */
   align-items: flex-start;
   text-align: center; /* Centering text within the container */
-  background-color: #f5e5d7; /* Rustic background color for the instructions */
+  background-color: #f5e5d7; 
   padding: 20px;
 `;
 
 const ImageWrapper = styled.div`
-  background-color: #804000; /* Rustic color */
+  background-color: #804000; 
   padding: 10px; /* Padding to create a border effect */
   display: inline-block; /* Ensure the background doesn't stretch the entire container */
 `;
@@ -38,7 +38,7 @@ const Title = styled.h4`
 
 const BoldParagraph = styled.p`
   color: #555;
-  font-weight: bold; /* Making text elements bold */
+  font-weight: bold; 
 `;
 
 const IngredientList = styled.ul`
@@ -67,7 +67,7 @@ const PageTitle = styled.h4`
 const RecipeInstructions = styled.div`
   background: #fff;
   padding: 20px;
-  font-family: 'Georgia', serif; /* Sample font for a rustic feel */
+  font-family: 'Georgia', serif; 
 `;
 
 const StyledOrderedListItem = styled.ol`
