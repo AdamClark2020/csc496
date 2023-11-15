@@ -10,7 +10,7 @@ const IndexPage = () => {
   return (
     <Layout pageTitle='Home Page'>
       <p>Welcome to adam clarks gatsby site.</p>
-      <MyImage>Text in image</MyImage>
+      
     </Layout>
   )
 }

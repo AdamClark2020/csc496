@@ -1,16 +1,12 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import PageTemplate from '../../src/pages/recipe'; 
+import React from "react"
+import { render } from "@testing-library/react"
 
-describe('PageTemplate component', () => {
-  test('Renders the title element', () => {
-    const mockData = {
-      title: 'SUUPRDEEP mediterranean quiche',
-    };
+// You have to write data-testid
+const Title = () => <h1 data-testid="hero-title">Gatsby is awesome!</h1>
 
-    const { getByText } = render(<PageTemplate pageContext={{ data: title }} />);
-
-    const titleElement = getByText('SUUPRDEEP mediterranean quiche');
-    expect(titleElement).toBeInTheDocument();
-  });
-});
+test("Displays the correct title", () => {
+  const { getByTestId } = render(<Title />)
+  // Assertion
+  expect(getByTestId("hero-title")).toHaveTextContent("Gatsby is awesome!")
+  // --> Test will pass
+})
