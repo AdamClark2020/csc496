@@ -106,7 +106,6 @@ const pageTemplate = props => {
   const { data } = props.pageContext;
 
   if (!data || !data.title) {
-    console.error('Data is not available:', data);
     return <p>Data is not available</p>;
   }
 

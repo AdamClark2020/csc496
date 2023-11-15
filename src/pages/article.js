@@ -15,9 +15,9 @@ const Author = styled.p`
 const CenteredContainer = styled.div`
   text-align: center;
   padding: 0 15%;
-  background: #f5f0ff; 
-  max-width: 70%; /* Limiting the width of the container */
-  margin: auto; /* Centering the container horizontally */
+  background: #f5f0ff;
+  max-width: 70%;
+  margin: auto;
 
   h2,
   h3,
@@ -30,27 +30,31 @@ const CenteredContainer = styled.div`
 
 const Article = (props) => {
   const data = props.pageContext.data;
+
   if (!data || !data.title || !data.body) {
-    console.error('Article data is not available:', data);
     return <p>Article data is not available</p>;
   }
 
+  const authorName = data.author?.displayName || 'Unknown'; // Display 'Unknown' if author data is not available
+
   return (
-    <div style={{ background: '#d5f1e3' }}> {}
+    <div style={{ background: '#d5f1e3' }}>
       <CenteredTitle>{data.title}</CenteredTitle>
-      <Author>Author: {data.author?.displayName}</Author>
+      <Author>Author: {authorName}</Author>
       <CenteredContainer>
         <div dangerouslySetInnerHTML={{ __html: data.body.processed }} />
       </CenteredContainer>
-      <img
-        src={data.mediaImage?.mediaImage?.url}
-        alt={data.title}
-        style={{
-          display: 'block',
-          margin: 'auto',
-          border: '20px solid #8d5524', 
-        }}
-      />
+      {data.mediaImage && data.mediaImage.mediaImage && (
+        <img
+          src={data.mediaImage.mediaImage.url}
+          alt={data.title}
+          style={{
+            display: 'block',
+            margin: 'auto',
+            border: '20px solid #8d5524',
+          }}
+        />
+      )}
     </div>
   );
 };
